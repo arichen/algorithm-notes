@@ -1,0 +1,2 @@
+- In a binary min heap, the maximum element can be found in O(N)
+    - doesn't use the property of min heap, simply traversing all the nodes
