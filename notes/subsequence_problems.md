@@ -17,4 +17,11 @@
     - Given a string s and an array of strings words, return the number of words[i] that is a subsequence of s.
     1. naive: iterate through `words`, check if `words[i]` is subsequence of s one by one. -> O(len(words) * len(s)) -> might have too many duplicated work.
     2. build `words` as trie, and iterate through `s` and check if there is matching entry in trie. -> trie has problem handling..
-    3. go back to the idea in 392. All we need to determine whether a subsequence exist is whether characters appear in certain sequence. We have one target character at a time. -> use a dictionary to keep all the next target characters and their respective following sequences. e.g. `["a", "bb", "acb", "ade"]`, we have dict `{"a": ["", "cb", "de"], "b": ["b"]}`, if we see `"a"`, then pop out key a, and we know we've found 1 complete sequence (empty string met), and we need to look for `"c"` and `"d"` the next.
+    3. go back to the idea in 392. All we need to determine whether a subsequence exist is whether characters appear in certain sequence. We have one target character at a time. -> use a dictionary to keep all the next target characters and their respective following sequences. e.g. `["a", "bb", "acb", "ade"]`, we have dict `{"a": ["", "cb", "de"], "b": ["b"]}`, if we see `"a"`, then pop out key a, and we know we've found 1 complete sequence (empty string met), and we need to look for `"c"` and `"d"` the next. add `{"c": ["b"], "d": ["e"]}` to dict.
+
+- [1055. Shortest Way to Form String](https://leetcode.com/problems/shortest-way-to-form-string/)
+
+- [727. Minimum Window Subsequence](https://leetcode.com/problems/minimum-window-subsequence/)
+    - Brute Force (TLE): scanning each index of S, every time when seeing T[0], starts finding the first (shortest) subsequence. find the min from those.
+        - what's duplicated? each index might be searched for many times. e.g. S="aaabxxc", T="abc", `b` will be searched for many times.
+    - intuition: for each mached `T[j]`, we want the largest index `i` in S that `S[i] == T[j - 1]`, so we can determine the smallest window to form subsequence of `T[: j+1]` from `S[0: j+1]`.
