@@ -5,10 +5,18 @@
     - `<=` searches for every element
 
 - left < right
-    - Search for bound that split the data in two sections
-    - When looking for left bound, use `right` as the potential answer (spliting point) once `left` meets it.
-    - When looking for right bound, use `left` as the potential answer once `right` meets it.
+    - Split the array into two sections
+    - When looking for the first element in the second partition
+        - using `left` to approach `right`. `right` is the first element in the second partition.
+        - `mid = left + (right - left) // 2`
+        - `left = mid + 1`, if mid belongs to the first partition
+        - `right = mid`, if mid belongs to the second partition
 
+    - When looking for the last element in the first partition
+        - using `right` to approach `left`. `left` is the last element in the first partition.
+        - `mid = left + (right - left) // 2 + 1`. "+1" to let mid lean toward right.
+        - `left = mid`, if mid belongs to the first partition
+        - `right = mid - 1`, mid belongs to the second partition
 
 ### 162. Find Peak Element
 ```python
