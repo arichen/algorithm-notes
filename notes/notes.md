@@ -30,3 +30,10 @@
 ### Bottom-up pros:
 1. Easier to reason the time complexity.
 2. No recursion. No concern about stack overflow.
+
+### topics to review
+- segment tree
+- disjoint set
+- avl tree
+- np complete
+- 01 knapsack

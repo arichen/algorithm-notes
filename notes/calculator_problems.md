@@ -18,3 +18,10 @@
         - second thought: use the observation that `a-b` equals to `a+(-b)`, we don't need a separate stack for operators. if we see a minus operation, we push the `-b` onto stack. And when we see * and /, we immediately process the value and push the result to stack. Only 1 stack is needed.
 
 - [772. Basic Calculator III](https://leetcode.com/problems/basic-calculator-iii/)
+
+
+# Binary Expression Tree
+
+- [1597. Build Binary Expression Tree From Infix Expression](https://leetcode.com/problems/build-binary-expression-tree-from-infix-expression/)
+    - convert infix to postfix, and build the tree from postfix
+    - use parser implementation. "a standard expression parser implementation where you call parse-functions on those with the lowest precendence and recursively invoke parse-functions of things with higher precendence."
